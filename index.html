@@ -11,77 +11,60 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
-        /* Smooth Scroll Offset fix */
-        section { scroll-margin-top: 80px; padding: 100px 40px; text-align: center; }
-
-        body {
-            background-color: #0d0e11;
-            color: #f1f2f6;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-        }
-
         :root {
-            --gold: #dfb76c;
-            --gold-glow: rgba(223, 183, 108, 0.4);
-            --dark-bg: #13151a;
+            --green: #2ecc71; /* Green Theme */
+            --green-glow: rgba(46, 204, 113, 0.4);
+            --dark-bg: #0d0e11;
             --light-text: #ffffff;
             --grey-text: #a0a5b5;
         }
 
+        body { background-color: var(--dark-bg); color: #f1f2f6; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        section { scroll-margin-top: 80px; padding: 100px 40px; text-align: center; }
+
         nav {
             position: fixed; top: 0; width: 100%;
-            background: rgba(19, 21, 26, 0.95);
+            background: rgba(13, 14, 17, 0.95);
             backdrop-filter: blur(12px);
             padding: 20px 50px;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 1000;
-            border-bottom: 2px solid var(--gold);
+            border-bottom: 2px solid var(--green);
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
-        
-        /* Responsive Mobile Nav */
-        @media (max-width: 768px) {
-            nav { padding: 20px 20px; }
-            .nav-links { gap: 15px; }
-            .hero h1 { font-size: 2.5rem !important; }
-            .industry-card { width: 100% !important; }
-        }
 
-        .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 800; color: var(--light-text); text-decoration: none; letter-spacing: 2px; }
-        .logo span { color: var(--gold); text-shadow: 0 0 10px var(--gold-glow); }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 800; color: var(--light-text); text-decoration: none; }
+        .logo span { color: var(--green); }
         .nav-links { display: flex; list-style: none; gap: 35px; }
-        .nav-links a { color: var(--grey-text); text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.3s ease; }
-        .nav-links a:hover { color: var(--gold); text-shadow: 0 0 5px var(--gold-glow); }
+        .nav-links a { color: var(--grey-text); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--green); }
 
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 120px 20px 60px 20px; background: radial-gradient(circle at center, #1a1d24 0%, #0d0e11 100%); text-align: center; }
-        .hero-content { max-width: 900px; z-index: 5; }
-        .hero-tagline { font-size: 0.9rem; color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-weight: 700; margin-bottom: 15px; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 5px; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 800; line-height: 1.2; letter-spacing: 2px; margin-bottom: 25px; color: var(--light-text); }
-        .hero h1 span { background: linear-gradient(45deg, #fff, var(--gold), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.1rem; color: var(--grey-text); margin-bottom: 40px; line-height: 1.8; }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, #1a2522 0%, #0d0e11 100%); }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 4rem; margin-bottom: 25px; color: var(--light-text); }
+        .hero h1 span { color: var(--green); }
+        
+        .btn-green { 
+            text-decoration: none; padding: 15px 35px; 
+            background: transparent; border: 2px solid var(--green);
+            color: var(--green); font-weight: 700; border-radius: 4px;
+            text-transform: uppercase; letter-spacing: 2px;
+            transition: 0.3s; display: inline-block;
+        }
+        .btn-green:hover { background: var(--green); color: #000; box-shadow: 0 0 20px var(--green-glow); }
 
-        .btn-gold { text-decoration: none; padding: 15px 35px; background: linear-gradient(45deg, #b8860b, var(--gold)); color: #000; font-weight: 700; border-radius: 4px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 0 15px var(--gold-glow); transition: all 0.3s ease; display: inline-block; }
-        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 0 25px var(--gold); }
+        .industry-card { 
+            background: #13151a; border: 1px solid rgba(46, 204, 113, 0.2); 
+            padding: 40px; width: 340px; border-radius: 8px; transition: 0.4s;
+        }
+        .industry-card:hover { border-color: var(--green); transform: translateY(-10px); }
+        .industry-icon { font-size: 3rem; color: var(--green); margin-bottom: 20px; display: block; }
 
-        .section-title { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: 3px; }
-        .section-subtitle { color: var(--gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 60px; }
-        .industry-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .industry-card { background: var(--dark-bg); border: 1px solid rgba(223, 183, 108, 0.1); border-radius: 8px; padding: 40px 30px; width: 340px; text-align: left; transition: all 0.4s ease; position: relative; overflow: hidden; }
-        .industry-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s ease; }
-        .industry-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .industry-card:hover::before { transform: scaleX(1); }
-        .industry-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
-        .industry-card h3 { font-family: 'Cinzel', serif; font-size: 1.3rem; margin-bottom: 15px; color: #fff; }
-        .industry-card p { color: var(--grey-text); font-size: 0.95rem; line-height: 1.6; }
-
-        .contact-box { background: var(--dark-bg); max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 8px; border: 1px solid rgba(223, 183, 108, 0.2); }
-        .form-group input, .form-group textarea { width: 100%; padding: 14px; background: #1a1d24; border: 1px solid #2e323d; border-radius: 4px; color: #fff; font-size: 0.95rem; outline: none; margin-bottom: 20px; transition: all 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 10px rgba(223, 183, 108, 0.2); }
-        .submit-btn { width: 100%; padding: 14px; background: var(--gold); color: #000; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
-        .submit-btn:hover { background: #fff; box-shadow: 0 0 15px rgba(255,255,255,0.3); }
-
-        footer { background: #08090c; padding: 40px; text-align: center; border-top: 1px solid #1a1d24; font-size: 0.85rem; color: var(--grey-text); letter-spacing: 1px; }
+        .submit-btn { 
+            width: 100%; padding: 14px; background: var(--green); color: #000; 
+            border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; 
+        }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem !important; } }
     </style>
 </head>
 <body>
@@ -90,76 +73,37 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#sectors">Sectors</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     <section id="home" class="hero">
-        <div class="hero-content">
-            <span class="hero-tagline">Shaping The Future</span>
-            <h1>NAFAY GROUPS OF <br><span>INDUSTRIES</span></h1>
-            <p>Leading global markets through innovation, sustainable development, and unmatched excellence across diverse industrial sectors.</p>
-            <a href="#sectors" class="btn-gold">Explore Our Sectors</a>
+        <div>
+            <h1 style="text-align: center;">NAFAY GROUPS OF <br><span>INDUSTRIES</span></h1>
+            <a href="#sectors" class="btn-green">Explore Projects</a>
         </div>
     </section>
-    <section id="sectors" style="background-color: #090a0d;">
-        <h2 class="section-title">Our Industrial Pillars</h2>
-        <div class="section-subtitle">Global Operations & Infrastructure</div>
-        <div class="industry-grid">
+    <section id="sectors">
+        <h2 style="color:white; margin-bottom: 50px;">Industrial Pillars</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
             <div class="industry-card">
                 <span class="industry-icon">🏗️</span>
-                <h3>Nafay Construction</h3>
-                <p>Building high-end commercial infrastructure, modern mega structures, and industrial hubs with cutting-edge engineering.</p>
+                <h3 style="color:white;">Construction</h3>
+                <p style="color:var(--grey-text);">Building the future with precision.</p>
             </div>
             <div class="industry-card">
                 <span class="industry-icon">⚡</span>
-                <h3>Nafay Energy</h3>
-                <p>Powering tomorrow with sustainable energy systems, smart grid deployments, and next-generation renewable resources.</p>
-            </div>
-            <div class="industry-card">
-                <span class="industry-icon">🌐</span>
-                <h3>Nafay Tech & Digital</h3>
-                <p>Innovating automated industrial software, heavy system AI setups, and high-performance digital infrastructure solutions.</p>
+                <h3 style="color:white;">Energy</h3>
+                <p style="color:var(--grey-text);">Powering the world sustainably.</p>
             </div>
         </div>
     </section>
-    <section id="about">
-        <h2 class="section-title" style="color: #fff;">Legacy & Vision</h2>
-        <div class="section-subtitle" style="margin-bottom: 30px;">A Commitment to Excellence</div>
-        <p style="max-width: 800px; margin: 0 auto; line-height: 2; color: var(--grey-text); font-size: 1.05rem;">
-            Nafay Groups of Industries operates at the pinnacle of global corporate frameworks. From heavy engineering to cutting-edge tech integration, we focus on empowering communities, solidifying trust, and setting benchmarks that define industries for generations to come.
-        </p>
-    </section>
-    <section id="contact" style="background-color: #090a0d;">
-        <h2 class="section-title">Global Headquarters</h2>
-        <div class="section-subtitle">Connect With Our Corporate Desk</div>
-        <div class="contact-box">
-            <form action="https://formspree.io/f/xanygpkp" method="POST" class="form-group">
-                <input type="text" name="name" placeholder="Corporate / Representative Name" required>
-                <input type="email" name="email" placeholder="Official Email Address" required>
-                <textarea name="message" rows="5" placeholder="Partnership Proposals / Inquiry Details" required></textarea>
-                <button type="submit" class="submit-btn">Submit Inquiry</button>
+    <section id="contact" style="background: #090a0d;">
+        <div style="max-width: 600px; margin: auto;">
+            <form action="https://formspree.io/f/xanygpkp" method="POST">
+                <input type="text" name="name" placeholder="Name" style="width:100%; padding:14px; margin-bottom:10px; background:#1a1d24; border:none; color:white;">
+                <button type="submit" class="submit-btn">Submit</button>
             </form>
         </div>
     </section>
-    <footer>
-        &copy; 2026 NAFAY GROUPS OF INDUSTRIES. All Rights Reserved.
-    </footer>
-
-    <audio id="hoverSound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav" preload="auto"></audio>
-    <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-86.wav" preload="auto"></audio>
-
-    <script>
-        const hoverSound = document.getElementById('hoverSound');
-        const clickSound = document.getElementById('clickSound');
-        hoverSound.volume = 0.2; clickSound.volume = 0.3;
-        document.addEventListener("DOMContentLoaded", function() {
-            const targets = document.querySelectorAll('a, .industry-card, .submit-btn');
-            targets.forEach(el => {
-                el.addEventListener('mouseenter', () => { hoverSound.currentTime = 0; hoverSound.play().catch(e => {}); });
-                el.addEventListener('click', () => { clickSound.currentTime = 0; clickSound.play().catch(e => {}); });
-            });
-        });
-    </script>
 </body>
 </html>
