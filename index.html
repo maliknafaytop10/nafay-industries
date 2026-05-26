@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAFAY GROUPS OF INDUSTRIES</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2942/2942813.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        /* Smooth Scroll Offset fix */
+        section { scroll-margin-top: 80px; padding: 100px 40px; text-align: center; }
+
         body {
             background-color: #0d0e11;
             color: #f1f2f6;
@@ -31,239 +30,61 @@
         }
 
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: fixed; top: 0; width: 100%;
             background: rgba(19, 21, 26, 0.95);
             backdrop-filter: blur(12px);
             padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
             z-index: 1000;
             border-bottom: 2px solid var(--gold);
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--light-text);
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-        .logo span {
-            color: var(--gold);
-            text-shadow: 0 0 10px var(--gold-glow);
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-        }
-        .nav-links a {
-            color: var(--grey-text);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
-        }
-        .nav-links a:hover {
-            color: var(--gold);
-            text-shadow: 0 0 5px var(--gold-glow);
+        
+        /* Responsive Mobile Nav */
+        @media (max-width: 768px) {
+            nav { padding: 20px 20px; }
+            .nav-links { gap: 15px; }
+            .hero h1 { font-size: 2.5rem !important; }
+            .industry-card { width: 100% !important; }
         }
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 120px 20px 60px 20px;
-            background: radial-gradient(circle at center, #1a1d24 0%, #0d0e11 100%);
-            text-align: center;
-        }
-        .hero-content {
-            max-width: 900px;
-            z-index: 5;
-        }
-        .hero-tagline {
-            font-size: 0.9rem;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: inline-block;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 5px;
-        }
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            color: var(--light-text);
-        }
-        .hero h1 span {
-            background: linear-gradient(45deg, #fff, var(--gold), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--grey-text);
-            margin-bottom: 40px;
-            line-height: 1.8;
-        }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 800; color: var(--light-text); text-decoration: none; letter-spacing: 2px; }
+        .logo span { color: var(--gold); text-shadow: 0 0 10px var(--gold-glow); }
+        .nav-links { display: flex; list-style: none; gap: 35px; }
+        .nav-links a { color: var(--grey-text); text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--gold); text-shadow: 0 0 5px var(--gold-glow); }
 
-        .btn-gold {
-            text-decoration: none;
-            padding: 15px 35px;
-            background: linear-gradient(45deg, #b8860b, var(--gold));
-            color: #000;
-            font-weight: 700;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 0 15px var(--gold-glow);
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px var(--gold);
-        }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 120px 20px 60px 20px; background: radial-gradient(circle at center, #1a1d24 0%, #0d0e11 100%); text-align: center; }
+        .hero-content { max-width: 900px; z-index: 5; }
+        .hero-tagline { font-size: 0.9rem; color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-weight: 700; margin-bottom: 15px; display: inline-block; border-bottom: 2px solid var(--gold); padding-bottom: 5px; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 800; line-height: 1.2; letter-spacing: 2px; margin-bottom: 25px; color: var(--light-text); }
+        .hero h1 span { background: linear-gradient(45deg, #fff, var(--gold), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.1rem; color: var(--grey-text); margin-bottom: 40px; line-height: 1.8; }
 
-        section {
-            padding: 100px 40px;
-            text-align: center;
-        }
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: 3px;
-        }
-        .section-subtitle {
-            color: var(--gold);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 60px;
-        }
-        .industry-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .industry-card {
-            background: var(--dark-bg);
-            border: 1px solid rgba(223, 183, 108, 0.1);
-            border-radius: 8px;
-            padding: 40px 30px;
-            width: 340px;
-            text-align: left;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .industry-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-        .industry-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .industry-card:hover::before {
-            transform: scaleX(1);
-        }
-        .industry-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        .industry-card h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-        .industry-card p {
-            color: var(--grey-text);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+        .btn-gold { text-decoration: none; padding: 15px 35px; background: linear-gradient(45deg, #b8860b, var(--gold)); color: #000; font-weight: 700; border-radius: 4px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 0 15px var(--gold-glow); transition: all 0.3s ease; display: inline-block; }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 0 25px var(--gold); }
 
-        .contact-box {
-            background: var(--dark-bg);
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid rgba(223, 183, 108, 0.2);
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            background: #1a1d24;
-            border: 1px solid #2e323d;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--gold);
-            box-shadow: 0 0 10px rgba(223, 183, 108, 0.2);
-        }
-        .submit-btn {
-            width: 100%;
-            padding: 14px;
-            background: var(--gold);
-            color: #000;
-            border: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .submit-btn:hover {
-            background: #fff;
-            box-shadow: 0 0 15px rgba(255,255,255,0.3);
-        }
+        .section-title { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: 3px; }
+        .section-subtitle { color: var(--gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 60px; }
+        .industry-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .industry-card { background: var(--dark-bg); border: 1px solid rgba(223, 183, 108, 0.1); border-radius: 8px; padding: 40px 30px; width: 340px; text-align: left; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .industry-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s ease; }
+        .industry-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .industry-card:hover::before { transform: scaleX(1); }
+        .industry-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+        .industry-card h3 { font-family: 'Cinzel', serif; font-size: 1.3rem; margin-bottom: 15px; color: #fff; }
+        .industry-card p { color: var(--grey-text); font-size: 0.95rem; line-height: 1.6; }
 
-        footer {
-            background: #08090c;
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid #1a1d24;
-            font-size: 0.85rem;
-            color: var(--grey-text);
-            letter-spacing: 1px;
-        }
+        .contact-box { background: var(--dark-bg); max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 8px; border: 1px solid rgba(223, 183, 108, 0.2); }
+        .form-group input, .form-group textarea { width: 100%; padding: 14px; background: #1a1d24; border: 1px solid #2e323d; border-radius: 4px; color: #fff; font-size: 0.95rem; outline: none; margin-bottom: 20px; transition: all 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 10px rgba(223, 183, 108, 0.2); }
+        .submit-btn { width: 100%; padding: 14px; background: var(--gold); color: #000; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #fff; box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+
+        footer { background: #08090c; padding: 40px; text-align: center; border-top: 1px solid #1a1d24; font-size: 0.85rem; color: var(--grey-text); letter-spacing: 1px; }
     </style>
 </head>
 <body>
-
     <nav>
         <a href="#" class="logo">NAFAY GROUPS<span>.</span></a>
         <ul class="nav-links">
@@ -273,7 +94,6 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
     <section id="home" class="hero">
         <div class="hero-content">
             <span class="hero-tagline">Shaping The Future</span>
@@ -282,11 +102,9 @@
             <a href="#sectors" class="btn-gold">Explore Our Sectors</a>
         </div>
     </section>
-
     <section id="sectors" style="background-color: #090a0d;">
         <h2 class="section-title">Our Industrial Pillars</h2>
         <div class="section-subtitle">Global Operations & Infrastructure</div>
-        
         <div class="industry-grid">
             <div class="industry-card">
                 <span class="industry-icon">🏗️</span>
@@ -305,7 +123,6 @@
             </div>
         </div>
     </section>
-
     <section id="about">
         <h2 class="section-title" style="color: #fff;">Legacy & Vision</h2>
         <div class="section-subtitle" style="margin-bottom: 30px;">A Commitment to Excellence</div>
@@ -313,11 +130,9 @@
             Nafay Groups of Industries operates at the pinnacle of global corporate frameworks. From heavy engineering to cutting-edge tech integration, we focus on empowering communities, solidifying trust, and setting benchmarks that define industries for generations to come.
         </p>
     </section>
-
     <section id="contact" style="background-color: #090a0d;">
         <h2 class="section-title">Global Headquarters</h2>
         <div class="section-subtitle">Connect With Our Corporate Desk</div>
-        
         <div class="contact-box">
             <form action="https://formspree.io/f/xanygpkp" method="POST" class="form-group">
                 <input type="text" name="name" placeholder="Corporate / Representative Name" required>
@@ -327,7 +142,6 @@
             </form>
         </div>
     </section>
-
     <footer>
         &copy; 2026 NAFAY GROUPS OF INDUSTRIES. All Rights Reserved.
     </footer>
@@ -338,20 +152,12 @@
     <script>
         const hoverSound = document.getElementById('hoverSound');
         const clickSound = document.getElementById('clickSound');
-        hoverSound.volume = 0.2;
-        clickSound.volume = 0.3;
-
+        hoverSound.volume = 0.2; clickSound.volume = 0.3;
         document.addEventListener("DOMContentLoaded", function() {
             const targets = document.querySelectorAll('a, .industry-card, .submit-btn');
             targets.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    hoverSound.currentTime = 0;
-                    hoverSound.play().catch(e => {});
-                });
-                el.addEventListener('click', () => {
-                    clickSound.currentTime = 0;
-                    clickSound.play().catch(e => {});
-                });
+                el.addEventListener('mouseenter', () => { hoverSound.currentTime = 0; hoverSound.play().catch(e => {}); });
+                el.addEventListener('click', () => { clickSound.currentTime = 0; clickSound.play().catch(e => {}); });
             });
         });
     </script>
