@@ -3,107 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAFAY GROUPS OF INDUSTRIES</title>
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2942/2942813.png" type="image/x-icon">
+    <title>NAFAY GROUPS | OFFICIAL</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        body { background: #0d0e11; color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
         
-        :root {
-            --green: #2ecc71; /* Green Theme */
-            --green-glow: rgba(46, 204, 113, 0.4);
-            --dark-bg: #0d0e11;
-            --light-text: #ffffff;
-            --grey-text: #a0a5b5;
-        }
+        /* Animation Class */
+        .fade-in { animation: fadeIn 1.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        body { background-color: var(--dark-bg); color: #f1f2f6; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        section { scroll-margin-top: 80px; padding: 100px 40px; text-align: center; }
-
-        nav {
-            position: fixed; top: 0; width: 100%;
-            background: rgba(13, 14, 17, 0.95);
-            backdrop-filter: blur(12px);
-            padding: 20px 50px;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000;
-            border-bottom: 2px solid var(--green);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .logo { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 800; color: var(--light-text); text-decoration: none; }
-        .logo span { color: var(--green); }
-        .nav-links { display: flex; list-style: none; gap: 35px; }
-        .nav-links a { color: var(--grey-text); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--green); }
-
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, #1a2522 0%, #0d0e11 100%); }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 4rem; margin-bottom: 25px; color: var(--light-text); }
-        .hero h1 span { color: var(--green); }
+        nav { padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2ecc71; }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 800; color: #2ecc71; }
         
-        .btn-green { 
-            text-decoration: none; padding: 15px 35px; 
-            background: transparent; border: 2px solid var(--green);
-            color: var(--green); font-weight: 700; border-radius: 4px;
-            text-transform: uppercase; letter-spacing: 2px;
-            transition: 0.3s; display: inline-block;
-        }
-        .btn-green:hover { background: var(--green); color: #000; box-shadow: 0 0 20px var(--green-glow); }
+        .hero { min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        .hero h1 { font-size: 3.5rem; color: #2ecc71; }
+        .eid-alert { background: #2ecc71; color: #000; padding: 10px 20px; border-radius: 50px; font-weight: bold; margin-bottom: 20px; }
 
-        .industry-card { 
-            background: #13151a; border: 1px solid rgba(46, 204, 113, 0.2); 
-            padding: 40px; width: 340px; border-radius: 8px; transition: 0.4s;
-        }
-        .industry-card:hover { border-color: var(--green); transform: translateY(-10px); }
-        .industry-icon { font-size: 3rem; color: var(--green); margin-bottom: 20px; display: block; }
-
-        .submit-btn { 
-            width: 100%; padding: 14px; background: var(--green); color: #000; 
-            border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; 
-        }
+        .about-section, .mother-section { padding: 80px 20px; text-align: center; }
+        .mother-card { background: #1a1d24; padding: 40px; border-radius: 20px; border: 1px solid #2ecc71; max-width: 500px; margin: auto; }
         
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem !important; } }
+        .footer { padding: 30px; text-align: center; border-top: 1px solid #333; color: #888; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#" class="logo">NAFAY GROUPS<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sectors">Sectors</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+
+    <nav class="fade-in">
+        <div class="logo">NAFAY GROUPS</div>
     </nav>
-    <section id="home" class="hero">
-        <div>
-            <h1 style="text-align: center;">NAFAY GROUPS OF <br><span>INDUSTRIES</span></h1>
-            <a href="#sectors" class="btn-green">Explore Projects</a>
+
+    <section class="hero fade-in">
+        <div class="eid-alert">✨ EID UL ADHA COMING SOON ✨</div>
+        <h1>NAFAY GROUPS <br> OF INDUSTRIES</h1>
+    </section>
+
+    <section class="about-section fade-in">
+        <h2>ABOUT US</h2>
+        <p style="max-width: 600px; margin: 20px auto;">We are leading the industry with innovation and integrity. Defining the future, one step at a time.</p>
+    </section>
+
+    <section class="mother-section fade-in">
+        <div class="mother-card">
+            <h2 style="color: #2ecc71;">❤️ MY INSPIRATION</h2>
+            <p style="margin-top: 15px; font-size: 1.2rem;">"I LOVE MY MOTHER - She is the reason behind every success."</p>
         </div>
     </section>
-    <section id="sectors">
-        <h2 style="color:white; margin-bottom: 50px;">Industrial Pillars</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-            <div class="industry-card">
-                <span class="industry-icon">🏗️</span>
-                <h3 style="color:white;">Construction</h3>
-                <p style="color:var(--grey-text);">Building the future with precision.</p>
-            </div>
-            <div class="industry-card">
-                <span class="industry-icon">⚡</span>
-                <h3 style="color:white;">Energy</h3>
-                <p style="color:var(--grey-text);">Powering the world sustainably.</p>
-            </div>
-        </div>
-    </section>
-    <section id="contact" style="background: #090a0d;">
-        <div style="max-width: 600px; margin: auto;">
-            <form action="https://formspree.io/f/xanygpkp" method="POST">
-                <input type="text" name="name" placeholder="Name" style="width:100%; padding:14px; margin-bottom:10px; background:#1a1d24; border:none; color:white;">
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-        </div>
-    </section>
+
+    <div class="footer fade-in">
+        &copy; 2026 NAFAY GROUPS. All Rights Reserved.
+    </div>
+
 </body>
 </html>
